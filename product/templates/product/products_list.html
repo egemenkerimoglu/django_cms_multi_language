@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %} 
+{% load static %} {% load i18n %} 
+{% block title%}{{ _("Ürün Gruplarımız") }}{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+{% include "page/components/page_header.html" with title=_("Ürün Gruplarımız") %}
+
+<section class="py-section">
+    <div class="container px-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for product in products%}
+            <div class="col-4 mb-5">
+                {% include "product/components/product.html" %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% comment %} İletişim Form ve Bilgi  {% endcomment %}
+{% include "page/components/contact_info.html" %}    
+
+{% endblock content %}

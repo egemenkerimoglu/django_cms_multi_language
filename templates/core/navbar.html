@@ -1,0 +1,54 @@
+{% load static %}
+{% load i18n %}
+
+<nav class="navbar navbar-expand-md navbar-dark border-bottom-nav fixed-top py-4">
+    <div class="container-md">
+        <a class="navbar-brand" href="{% url 'home_page_view' %}">
+            <img src="{% static 'img/logo.png' %}" alt="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0 mt-4 mt-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home_page_view' %}">{{ _('Ana Sayfa') }}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ _('Kurumsal') }}</a>
+                    <ul class="dropdown-menu">
+                        {% for page in global_pages_context %}
+                            <li><a class="dropdown-item" href="{{ page.get_absolute_url }}">{{ page.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'service:firs_service_view' %}">{{ _('Hizmetlerimiz') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'product:all_products_view' %}">{{ _('Ürün Gruplarımız') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ _('Habeler') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'career_page_view' %}">{{ _('Kariyer') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact_page_view' %}">{{ _('İletişim') }}</a>
+                </li>
+                <li class="nav-item">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for lan in languages %}
+                        {% if lan.code != LANGUAGE_CODE %}
+                        <a class="nav-link" href="/{{lan.code}}">{{lan.name_local}}</a>
+                        {% endif %}
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

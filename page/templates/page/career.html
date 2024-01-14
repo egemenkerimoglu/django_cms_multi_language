@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+{% block title %}{{ _('Kariyer') }}{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+{% include "page/components/page_header.html" with title=_('Kariyer') %}
+
+<section class="py-section ">
+    <div class="container px-5">
+
+    
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-8">
+                <p>
+                    Lütfen aşağıdaki formu doldurup bize gönderin. Vereceğiniz bilgiler hiçbir üçüncü şahıs, kurum veya kuruluş ile paylaşılmayacaktır. Bilgileriniz veritabanımıza kaydedilecektir. Uygun bir pozisyon açılması durumunda sizinle iletişime geçilecektir.
+                </p>
+
+                {% include 'core/messages.html' %}
+                
+                <form class="contact-form custom-contact-form-style-1"  method="post">
+                    {% csrf_token %}                   
+                    {{ form.as_p   }}
+                    <button class="btn btn-outline-primary mb-2 custom-border-radius fw-bold">
+                        Gönder
+                    </button>
+                </form>
+            </div>           
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

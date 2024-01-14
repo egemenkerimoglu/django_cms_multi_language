@@ -1,0 +1,203 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+
+    {% comment %} Slider {% endcomment %}
+    <header>
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner ">
+                <div class="carousel-item  active" style="background-image: url('{% static 'img/slide1.jpg' %}')">
+                    <!-- <div class="carousel-caption d-none d-md-block"> -->
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100 px-md-5" style="top: 0">
+                        <h5 class="fs-1  fw-bold d-flex justify-content-start animate__animated  animate__fadeInLeftBig">Sağlık İçin Çalışıyoruz</h5>
+                        <div class="d-flex justify-content-start">                            
+                            <a class="btn btn-outline-primary mt-3 custom-border-radius fw-bold animate__animated  animate__fadeInLeftBig " href="#">Devamı</a>
+                        </div>                  
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('{% static 'img/slide1.jpg' %}')">
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100 px-md-5" style="top: 0">
+                        <h5 class="fs-1 fw-bold d-flex justify-content-start animate__animated animate__fadeInRight">Sağlık Hizmetleri İçin Tedarik Zinciri Çözümleri</h5>
+                        <p class="fs-1 fw-bold d-flex justify-content-start animate__animated animate__fadeInRight">Dünyanın Her Köşesine Ulaşım</p>
+                        <div class="d-flex justify-content-start">                            
+                            <a class="btn btn-outline-primary mt-3 custom-border-radius fw-bold animate__animated animate__fadeInRight" href="#">Devamı</a>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    {% comment %} Slider Alt Yazı {% endcomment %}
+    <section class="looking-for custom-position-1 custom-md-border-top z-index-1 clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-7">
+                    <div class="looking-for-box animate__animated  animate__fadeInUp">
+                        <h2 class="mb-4 text-white">Ares Ecza Deposu</h2>
+                        <p class="text-white">10.000 üzeri ilaç ve ilaç dışı ürünle, ulusal ve uluslararası sağlık
+                            alanında 30 yılı aşkın tecrübemiz ile hizmet vermekteyiz.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex justify-content-md-end mb-4 mb-md-0 animate__animated  animate__fadeInUp ">
+                    <a class="text-decoration-none" href="tel:+00112304567" target="_blank" title="Call Us Now">
+                        <span class="custom-call-to-action">
+                            <span class="text-color-primary">Bizi şimdi arayın</span>
+                            <br>
+                            <span class="text-white">(0312) 222 30 31</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-3 col-lg-2 animate__animated  animate__fadeInUp ">
+                    <a class="text-decoration-none" href="mail:mail@example.com" target="_blank" title="Email Us Now">
+                        <span class="custom-call-to-action">
+                            <span class="text-color-primary">E-posta Gönderin</span>
+                            <span class="text-white">info@aresecza.com.tr</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% comment %} Site İçerik {% endcomment %}
+    <section class="py-section ">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-6 col-lg-6">
+                    <h2>Hakkımızda</h2>
+                    <p class="lead mb-4">
+                        Ares Ecza Deposu 30 yılı aşkın tecrübesi ile resmi ve özel hastanelere, eczanelere hizmet
+                        vermektedir. Ulusal ve uluslararası alanda yerli ve yabancı müşterilerine, dünya
+                        standartlarında, insan sağlığı odaklı bir sektörün her geçen gün değişen ihtiyaçlarını tespit
+                        ederek partnerlerimizin çözüm ortağı oluyoruz.
+                    </p>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list list-icons list-icons-style-3 list-tertiary">
+                                <li class="mb-2 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        style="color: #33CCCC;" class="bi bi-arrow-right-circle-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> 3000 m² depo
+                                </li>
+                                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="currentColor" style="color: #33CCCC;"
+                                        class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> Hızlı Servis Hizmeti</li>
+                                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="currentColor" style="color: #33CCCC;"
+                                        class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> Soğuk zincir Depolama ve Taşıma</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list list-icons list-icons-style-3 list-tertiary">
+                                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="currentColor" style="color: #33CCCC;"
+                                        class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> Rekabetçi Fiyatlar</li>
+                                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="currentColor" style="color: #33CCCC;"
+                                        class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> Geniş ürün portföyü</li>
+                                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="currentColor" style="color: #33CCCC;"
+                                        class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> Deneyimli Kadro</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-outline-primary mb-2 custom-border-radius fw-bold " href="#">Devamı</a>
+
+                </div>
+                <div class="col-md-6 col-lg-6 position-relative">
+                    <div class="content-grid custom-content-grid mt-5 mb-4">
+                        <div class="row content-grid-row">
+                            <div class="content-grid-item col-lg-6 bg-color-light p-4">
+                                <div class="counters">
+                                    <div class="counter custom-sm-counter-style">
+                                        <img class="counter-icon"
+                                            src="http://ares.elkomyazilim.com/img/icons/icon-1.png" alt="">
+                                        <strong class="text-color-primary custom-primary-font" data-to="30"
+                                            data-append="+">30+</strong>
+                                        <label>Yıl Tecrübe</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-grid-item col-lg-6 p-4">
+                                <div class="counters">
+                                    <div class="counter margin-style-2 custom-sm-counter-style">
+                                        <img class="counter-icon"
+                                            src="http://ares.elkomyazilim.com/img/icons/icon-2.png" alt="">
+                                        <strong class="text-color-primary custom-primary-font" data-to="10000"
+                                            data-append="+">10000+</strong>
+                                        <label>Çeşit Ürün</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row content-grid-row">
+                            <div class="content-grid-item col-lg-6 p-4">
+                                <div class="counters">
+                                    <div class="counter custom-sm-counter-style">
+                                        <img class="counter-icon"
+                                            src="http://ares.elkomyazilim.com/img/icons/icon-3.png" alt="">
+                                        <strong class="text-color-primary custom-primary-font" data-to="240"
+                                            data-append="+">240+</strong>
+                                        <label>Mutlu Müşteri</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-grid-item col-lg-6 bg-color-light p-4">
+                                <div class="counters">
+                                    <div class="counter margin-style-2 custom-sm-counter-style">
+                                        <img class="counter-icon"
+                                            src="http://ares.elkomyazilim.com/img/icons/icon-4.png" alt="">
+                                        <strong class="text-color-primary custom-primary-font" data-to="30"
+                                            data-append="+">30+</strong>
+                                        <label>Deneyimli Personel</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% comment %} İletişim Form ve Bilgi  {% endcomment %}
+    {% include "page/components/contact_info.html" %}    
+
+
+{% endblock content %}

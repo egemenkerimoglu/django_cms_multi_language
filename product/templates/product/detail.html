@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %} 
+{% load thumbnail %}
+{% load static %} {% load i18n %} 
+
+{% block title%}{{ product.title }}{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+{% include "page/components/page_header.html" with title=product.title  sub_title=_("Ürün Gruplarımız") %}
+
+<section class="py-section">
+    <div class="container px-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
+                <img class="card-img-top mb-5 mb-md-0 border rounded  shadow-sm" 
+                src="{{ product.cover_image|thumbnail_url:'page' }}"
+                alt="{{ product.title }}" title="{{ product.title }}">
+            </div>
+            <div class="col-md-6">
+                <h2 class="display-5 fw-bolder">{{ product.title }}</h2>                
+                <span class="lead">
+                {{ product.content|safe}}
+                </span>                
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} İletişim Form ve Bilgi  {% endcomment %}
+{% include "page/components/contact_info.html" %}    
+
+{% endblock content %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            background-repeat: no-repeat;
+        }
+
+        body {
+            width: 100%;
+            margin: 0;
+            font-size: 20px;
+            font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+                "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+                "Segoe UI Symbol", "Noto Color Emoji";
+            line-height: 1.5;
+            font-weight: 400;
+            color: hsl(205deg, 30%, 15%);
+        }
+
+        .container,
+        .container-fluid {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1130px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 920px;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 510px;
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+    </style>
+
+    <title>Mail</title>
+</head>
+
+<body>
+    <nav class="container">
+        <h1>Ares Ecza Deposu</h1>
+    </nav>
+    <main class="container">
+        <h2>İletişim Formu Mesajı</h2>
+        <hr>
+        <p>Adı Soyadı : {{ name }}</p>
+        <p>E-Posta : {{ email}}</p>
+        <p>Mesaj : {{ content }}</p>
+        <hr>
+    </main>
+</body>
+
+</html>

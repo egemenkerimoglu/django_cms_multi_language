@@ -1,0 +1,36 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{% endblock %} - Elkom Ecza Deposu</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/ares.css' %}" rel="stylesheet" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    
+
+    {% include 'core/navbar.html' %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% include "core/footer.html" %}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static '/js/ares.js' %}"></script>
+
+</body>
+
+</html>

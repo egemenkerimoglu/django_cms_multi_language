@@ -1,0 +1,83 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+
+    <!-- Page Header -->
+    {% include "page/components/page_header.html" with title=page.title  sub_title=_('Kurumsal') %}    
+
+    <section class="py-section ">
+        <div class="container px-5">
+            <div class="row ">
+                <div class="col-12  px-4 px-lg-5">
+                    {{ page.content|safe }}
+                </div>
+            </div>
+
+            {% if page_images  %}            
+            <div class="row mt-5 px-4 px-lg-5 gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                {% for img in page_images %}
+                <div class="col-4 mb-5">
+                    <img class="img-fluid shadow-sm img-thumbnail" src="{{ img.image|thumbnail_url:'page' }}" alt="{{ page.title }}" title="{{ page.title }}">
+                </div>
+                {% endfor %}
+            </div>           
+            {% endif %}
+
+            <div class="row content-grid-row">
+                <div class="content-grid-item col-lg-3">
+                    <div class="counters">
+                        <div class="counter custom-sm-counter-style">
+                            <img class="counter-icon"
+                                src="http://ares.elkomyazilim.com/img/icons/icon-1.png" alt="">
+                            <strong class="text-color-primary custom-primary-font" data-to="30"
+                                data-append="+">30+</strong>
+                            <label>Yıl Tecrübe</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-grid-item col-lg-3">
+                    <div class="counters">
+                        <div class="counter margin-style-2 custom-sm-counter-style">
+                            <img class="counter-icon"
+                                src="http://ares.elkomyazilim.com/img/icons/icon-2.png" alt="">
+                            <strong class="text-color-primary custom-primary-font" data-to="10000"
+                                data-append="+">10000+</strong>
+                            <label>Çeşit Ürün</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-grid-item col-lg-3">
+                    <div class="counters">
+                        <div class="counter custom-sm-counter-style">
+                            <img class="counter-icon"
+                                src="http://ares.elkomyazilim.com/img/icons/icon-3.png" alt="">
+                            <strong class="text-color-primary custom-primary-font" data-to="240"
+                                data-append="+">240+</strong>
+                            <label>Mutlu Müşteri</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-grid-item col-lg-3">
+                    <div class="counters">
+                        <div class="counter margin-style-2 custom-sm-counter-style">
+                            <img class="counter-icon"
+                                src="http://ares.elkomyazilim.com/img/icons/icon-4.png" alt="">
+                            <strong class="text-color-primary custom-primary-font" data-to="30"
+                                data-append="+">30+</strong>
+                            <label>Deneyimli Personel</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+{% endblock content %}
